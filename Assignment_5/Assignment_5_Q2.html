@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let count;
+        let str;
+        while (1) {
+            count = window.prompt("Enter the count")
+            console.log("count = "+ count)
+            count = parseInt(count)
+            if (count > 0) {
+                break;
+            } else {
+                window.alert("Enter a valid number ")
+            }
+        }
+        
+        str = window.prompt("Enter the string :")
+        window.alert("Check output on console")
+
+        for (let i = 0; i < count; i++) {
+            console.log((i+1) +". " +str)
+
+        }
+
+    </script>
+</body>
+
+</html>
