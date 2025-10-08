@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+              margin: 0;
+              display: flex;
+              justify-content: center;
+              margin-top: 50px;
+}
+
+          .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            justify-items: center;
+
+          }
+
+          .greatingForToday {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: red;
+            font-size: larger;
+            font-weight: bold;
+          }
+    </style>
+</head>
+<body>
+      <div class="container">
+        <h1 style="justify-content: center;">
+            Date & Greeting Web Page
+        </h1>
+
+         <div class="greatingForToday">
+            <span id="todayDate"></span>
+            <span id="Greeting"></span>
+             <div>
+              <span>Number of Days left till end of year : </span>
+               <span id="numberOfdays" style="color: rgb(70, 70, 224);"></span>
+             </div>
+        </div>
+      </div>
+
+        
+      <script>
+            const date = new Date();
+
+            const getday = () => {
+                const taday =  date.getDay();
+                
+                switch (taday){
+                    case 0 : return "Sunday"
+                             break;
+
+                    case 1 : return "Sunday"
+                             break;
+
+                    case 2 : return "Sunday"
+                             break;
+
+                    case 3 : return "Sunday"
+                             break;
+
+                    case 4 : return "Sunday"
+                             break;
+
+                    case 5 : return "Sunday"
+                             break;
+
+                    case 5 : return "Sunday"
+                             break;
+                    default : console.log("Enter Valid Day...");
+                    
+                }
+            }
+
+            const getMonth = () => {
+                const month = date.getMonth();
+                const months = {
+                                   0: "January",
+                                   1: "February",
+                                   2: "March",
+                                   3: "April",
+                                   4: "May",
+                                   5: "June",
+                                   6: "July",
+                                   7: "August",
+                                   8: "September",
+                                   9: "October",
+                                   10: "November",
+                                   11: "December"
+};
+              return months[month];
+}
+ 
+            const year = date.getFullYear();
+
+           const dayLeft = () => {
+               const startOfYear = (new Date(date.getFullYear(), 0, 1));
+               const dayPassed = Math.floor( (date - startOfYear) / (24 * 60 * 60 * 1000)) + 1;
+
+               const totalDays =    (new Date (date.getFullYear(), 11, 31) - startOfYear) / (24 * 60 * 60 * 1000) + 1
+
+                return totalDays - dayPassed;
+           }
+
+           const greating = () => {
+            const hrs = date.getHours();
+            const min = date.getMinutes();
+            const sec = date.getSeconds()
+            
+            if (hrs > 5 && hrs < 12) return "Good Morning"
+            else if (hrs >= 12 && hrs < 16) return "Good Afternoon"
+            else if (hrs >= 16 && hrs < 21) return "Good Evening"
+            else return "Good Night"
+           }
+  
+           const today = document.getElementById("todayDate")
+           const greetMessage = document.getElementById("Greeting")
+           const daysLeft = document.getElementById("numberOfdays")
+
+           today.innerText = `Today is Friday, ${getday()} ${getMonth()} ${year},`
+           greetMessage.innerText = `Welcome, and ${greating()} to You.`
+           daysLeft.innerText = `${dayLeft()}`
+
+      </script>
+</body>
+</html>

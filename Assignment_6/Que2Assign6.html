@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh; 
+      display: flex;
+      justify-content: center;  
+      align-items: center;    
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px;
+      background: #d42a2a;
+      color: beige;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .block {
+      border: black solid 1px;
+      padding: 20px;
+    }
+
+    #inputNumber1 {
+        margin: 20px;
+    }
+    #inputNumber2 {
+        margin: 20px;
+    }
+    #res {
+        margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <h1>Calculator</h1>
+
+    <div class="block">
+      <table>
+        <tbody>
+          <tr>
+            <td><label for="inputNumber1">Enter Number 1</label></td>
+            <td><input type="number" id="inputNumber1"></td>
+          </tr>
+          <tr>
+            <td><label for="inputNumber2">Enter Number 2</label></td>
+            <td><input type="number" id="inputNumber2"></td>
+          </tr>
+          <tr>
+            <td><label for="res">Result</label></td>
+            <td><input type="number" id="res" readonly></td>
+            
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="text-align: center; margin-top: 10px;">
+        <button onclick="addition()">Addition</button>
+        <button onclick="subtraction()">Subtraction</button>
+        <button onclick="multiplication()">Multiplication</button>
+        <button onclick="division()">Division</button>
+      </div>
+
+      <span id="warning" style="color: red;"></span>
+    </div>
+  </div>
+
+  <script>
+    let num1 = document.getElementById("inputNumber1");
+    let num2 = document.getElementById("inputNumber2");
+    let result = document.getElementById("res");
+    let war = document.getElementById("warning");
+
+    const validate = () => {
+      if (num1.value === "" || num2.value === "") {
+        war.innerText = "Enter both numbers!";
+        return false;
+      }
+      war.innerText = "";
+      return true;
+    };
+
+    const addition = () => {
+      if (!validate()) return;
+      result.value = parseFloat(num1.value) + parseFloat(num2.value);
+    };
+
+    const subtraction = () => {
+      if (!validate()) return;
+      result.value = parseFloat(num1.value) - parseFloat(num2.value);
+    };
+
+    const multiplication = () => {
+      if (!validate()) return;
+      result.value = parseFloat(num1.value) * parseFloat(num2.value);
+    };
+
+    const division = () => {
+      if (!validate()) return;
+      result.value = parseFloat(num1.value) / parseFloat(num2.value);
+    };
+  </script>
+</body>
+</html>
+
