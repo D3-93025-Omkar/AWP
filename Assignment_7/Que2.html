@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 150px;
+            
+        }
+        button {
+            /* margin: 20px; */
+            padding: 10px;
+            background-color: orange;
+            margin: 5px;
+            border-radius: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+     <div class="main">
+         <div class="container">
+            <h1>Enter Employee Names</h1>
+     <div style="display: flex; ;">
+        <input type="text" id="name">
+        <button onclick="addName()">Add Name</button>
+        <button onclick="displayWithSorting()">Sort & display</button>
+
+    </div>
+      <h1 id="h1"></h1>
+        <ul id="list">
+        </ul>
+   </div>
+     </div>
+
+   
+
+    <script>
+        const nameArr = [];
+
+        function addName(){
+            let name = document.getElementById("name")
+            if(nameArr.length == 6) {
+                window.alert("You have already entered 6 names")
+                return
+            }
+            if(name.value == "") return "Enter Name First";
+            nameArr.push(name.value);  
+            name.value = ""   
+        }
+
+        function displayWithSorting(){
+            if(nameArr.length === 0){
+                window.alert("At least 1 Name required!")
+                return;
+            }
+
+            nameArr.sort()
+            
+            const h1 = document.getElementById("h1")
+            h1.innerText = "Sorted Employee Names : "
+            let list = document.getElementById("list")
+
+            nameArr.map((n) => {
+                list.innerHTML += `<li>${n}</li>`
+            })
+
+        }
+
+    </script>
+</body>
+</html>

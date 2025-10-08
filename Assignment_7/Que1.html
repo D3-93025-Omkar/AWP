@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+   <link rel="stylesheet" href="./Que1.css">
+</head>
+<body>
+  <div class="container">
+    
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/02q9aAVv1NI?si=QKv0aMWID3FBYQ5J" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+ 
+    <div>
+      <form action="" onsubmit="return afterSubmit()">
+        <table>
+          <tbody>
+            <tr>
+              <td><label for="name">Name : </label></td>
+              <td>
+                <input type="text" name="name" id="name" maxlength="10">
+                <span id="vName"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><label for="birthD">Birth Date : </label></td>
+              <td>
+                <input type="date" name="birthD" id="birthD">
+                <span id="vBirth"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><label for="email">Email : </label></td>
+              <td>
+                <input type="email" name="email" id="email" required>
+                <span id="vEmail"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><label for="pass">Password : </label></td>
+              <td>
+                <input type="password" name="pass" id="pass">
+                <span id="vPass"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><label for="address">Address : </label></td>
+              <td>
+                <textarea name="address" id="address" required></textarea>
+                <span id="vAddress"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><label>Gender : </label></td>
+              <td>
+                <input type="radio" name="gender" id="genderM" value="Male"> 
+                <label for="genderM">Male</label>
+                <input type="radio" name="gender" id="genderF" value="Female"> 
+                <label for="genderF">Female</label>
+                <span id="vGender"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><label for="file">Upload Photo : </label></td>
+              <td>
+                <input type="file" name="photo" id="file" required
+                >
+                <span id="vPhoto"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><label for="course">Course : </label></td>
+              <td>
+                <select name="course" id="course">
+                  <option value="">Select Course</option>
+                  <option value="JAVA">JAVA</option>
+                  <option value="C++">C++</option>
+                  <option value="SQL">SQL</option>
+                </select>
+                <span id="vCourse"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td><label>Skill Set : </label></td>
+              <td>
+                <input type="checkbox" name="skills" value="Java"> Java
+                <input type="checkbox" name="skills" value="CPP"> CPP
+                <input type="checkbox" name="skills" value="OS"> OS
+                <span id="vSkill"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td>
+                <input type="submit" name="submit" value="Save" onclick="afterSubmit()">
+                <input type="reset" name="reset" value="Clear">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+
+  </div>
+
+
+    <script src="./Que1JS.js"></script>
+
+</body>
+</html>
+
+
+
+
+  
+
